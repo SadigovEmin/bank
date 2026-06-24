@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Bell, Search } from "lucide-react";
+import {useLocation} from "react-router-dom";
 function Navbar({ pageTitle = "Dashboard" }) {
   const [searchQuery, setSearchQuery] = useState("");
   const handleSearchChange = (event) => {
@@ -14,10 +15,22 @@ function Navbar({ pageTitle = "Dashboard" }) {
     year: "numeric",
   }).format(new Date());
 
+  const location = useLocation();
+  const pageTitles = {
+    "/": "Dashboard",
+    "/creditcard": "Credit Cards",
+    "/transfer": "Money Transfer",
+    "/history": "Transaction History",
+    "/security": "Security Settings",
+    "/settings": "Settings",
+
+  };
+  const currentPageTitle = pageTitles[location.pathname] || "Dashboard";
+
   return (
-    <div className="flex w-full items-center justify-between bg-white p-4 shadow-sm">
+    <div className="flex w-full items-center justify-between bg-white/60  sticky top-0 z-50  p-4 shadow-sm backdrop-blur-sm border-b border-white/20">
       <div className="pl-4">
-        <h2 className="text-lg font-bold">{pageTitle}</h2>
+        <h2 className="text-lg font-bold">{currentPageTitle}</h2>
         <p className="text-xs font-thin opacity-70">{date}</p>
       </div>
 
