@@ -1,13 +1,15 @@
 import Logo from "../assets/logoTransparent.png";
 import {UserRound,LayoutDashboard, CreditCard, ArrowLeftRight,History, Shield, Settings, LogOut} from "lucide-react";
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useLocation} from "react-router-dom";
+
 
 function Sidebar({userName="Emin Sadigov"}) {
-
+  const location = useLocation();
+  const currentPage = location.pathname; // "/", "/creditcard", ....
 
 
   return (
-    <div className="w-60 bg-[#1A4378] text-white p-5 flex flex-col h-screen">
+    <div className="w-60 bg-[#1A4378] text-white p-5 flex flex-col h-screen ">
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-5 ">
           <div className="bg-[#495E87]/70 overflow-hidden rounded-3xl h-14 w-14 flex items-center justify-center ">
@@ -32,32 +34,32 @@ function Sidebar({userName="Emin Sadigov"}) {
       </div>
 
       <ul className="space-y-4 pl-3">
-        <NavLink to="/" className="flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87]">
+        <NavLink to="/" className={`flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87] ${currentPage==="/" ? "bg-[#495E87]" : "" }`} >
           <LayoutDashboard className=" w-4 h-4 ml-3 "/>
           <p>Dashboard</p>
         </NavLink>
 
-        <NavLink to="/creditcard" className="flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87]">
+        <NavLink to="/creditcard" className={`flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87] ${currentPage==="/creditcard" ? "bg-[#495E87]" : ""}`}>
           <CreditCard className=" w-4 h-4 ml-3 "/>
           <p>CreditCard</p>
         </NavLink>
 
-        <NavLink to="/transfer" className="flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87]">
+        <NavLink to="/transfer" className={`flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87] ${currentPage==="/transfer" ? "bg-[#495E87]": ""}`}>
           <ArrowLeftRight className=" w-4 h-4 ml-3 "/>
           <p>Transfer</p>
         </NavLink>
 
-        <NavLink to="/history" className="flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87]">
+        <NavLink to="/history" className={`flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87] ${currentPage==="/history"? "bg-[#495E87]" :""}`}>
           <History className=" w-4 h-4 ml-3 "/>
           <p>History</p>
         </NavLink>
 
-        <NavLink to="/security" className="flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87]">
+        <NavLink to="/security" className={`flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87] ${currentPage==="/security" ? "bg-[#495E87]":""}`}>
           <Shield className=" w-4 h-4 ml-3 "/>
           <p>Security</p>
         </NavLink>
 
-        <NavLink to="/settings" className="flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87]">
+        <NavLink to="/settings" className={`flex items-center gap-5 cursor-pointer transition rounded-lg w-48 h-10 hover:bg-[#495E87] ${currentPage==="/settings" ? "bg-[#495E87]":""}`}>
           <Settings className=" w-4 h-4 ml-3 "/>
           <p>Settings</p>
         </NavLink>

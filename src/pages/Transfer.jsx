@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar"
 function Transfer() {
     return (
         <div className="flex h-screen">
-            <Sidebar/>
+         
 
             <div className="flex-1 bg-gray-100">
                 <Navbar/>
