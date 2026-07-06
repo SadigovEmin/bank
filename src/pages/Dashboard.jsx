@@ -11,6 +11,9 @@ import {NavLink} from "react-router-dom";
 import {ChevronRight} from "lucide-react";
 
 import {useState} from "react";
+import CashFlowChart from "../components/ui/CashFlowChart"
+import SpendingDonut from "../components/ui/SpendingDonut"
+import RecentTransactionsForDashboard from "../components/ui/RecentTransactionsForDashboard"
 
 
 function Dashboard() {
@@ -84,15 +87,15 @@ function Dashboard() {
 
                        
 
-                        <div id="cash-flow" className="col-span-3 row-span-2 row-start-5">
-
+                        <div id="cash-flow" className=" col-span-5 col-start-1 lg:col-span-3 lg:row-span-2 row-start-5">
+                            <CashFlowChart/>
                         </div>
-                        <div id="spending-breakdown" className="col-span=2 row-span-2 col-start-4 row-start-5">
-
+                        <div id="spending-breakdown" className=" col-span-5 col-start-1 row-start-6 lg:col-span-2 lg:row-span-2 lg:col-start-4 lg:row-start-5">
+                            <SpendingDonut/>
                         </div>
 
-                        <div id="recent-transactions" className="col-span-5 row-span-4 row-start-7">
-
+                        <div id="recent-transactions" className="col-span-5 row-span-4 row-start-7 mt-5 pt-4">
+                            <RecentTransactionsForDashboard/>
                         </div>
                         
                     </div>
