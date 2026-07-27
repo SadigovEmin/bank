@@ -13,7 +13,7 @@ import {
   ChevronRight 
 } from 'lucide-react';
 
-// Mock dataset exactly matching the transactions in image_edf9c0.png
+// Mock dataset 
 const transactionsData = [
   {
     id: 1,
@@ -84,6 +84,15 @@ const transactionsData = [
     category: 'Bills',
     time: 'Jun 14, 08:30',
     amount: -28.00,
+    icon: PhoneCall,
+    iconColor: 'text-blue-600 bg-blue-50',
+  },
+  {
+    id: 9,
+    merchant: 'Utility — Azercell',
+    category: 'Bills',
+    time: 'Jun 14, 09:30',
+    amount: -8.00,
     icon: PhoneCall,
     iconColor: 'text-blue-600 bg-blue-50',
   },

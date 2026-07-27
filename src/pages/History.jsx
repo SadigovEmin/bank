@@ -8,10 +8,8 @@ function History() {
            
 
             <div className="flex-1 bg-gray-100">
-                <Navbar/>
-
                 <div className="p-6">
-                    <h1 className="text-2x1 font-bold">History</h1>
+                    We are currently working on this page 😊.
                 </div>
             </div>
         </div>

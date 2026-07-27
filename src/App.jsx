@@ -11,13 +11,13 @@ import ForgotPassword from "./pages/ForgotPassword";
 
 import DashboardLayout from "./layouts/DashboardLayout";
 import AuthLayout from "./layouts/AuthLayout";
-
+import './index.css';
 
 function App() {
 
   return (
    
-    <Routes>
+    <Routes >
 
       <Route element={<AuthLayout/>}>
         <Route path="/login" element={<Login/>}/>
